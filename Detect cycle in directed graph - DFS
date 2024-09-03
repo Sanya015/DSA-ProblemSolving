@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+  public:
+// DFS: T.C.=O(V+E) S.C.=O(V)
+    bool dfs(int V, vector<int> adj[], vector<int>& vis, vector<int>& path, int node){
+        vis[node]=1;
+        path[node]=1;
+        for(auto ele:adj[node]){
+            if(vis[ele]==-1){
+                
+                if(dfs(V, adj, vis, path, ele)==true) return true;
+                
+            }
+            else if(path[ele]==1) return true;
+        }
+        path[node]=-1;
+        return false;
+    }
+    
+    bool isCyclic(int V, vector<int> adj[]) {
+        vector<int> vis(V, -1);
+        vector<int> path(V, -1);
+        int node;
+        for(int i=0; i<V; i++){
+            if(vis[i]==-1){
+                if(dfs(V, adj, vis, path, i)==true) return true;
+            }
+        }
+        return false;
+        
+    }
+};
