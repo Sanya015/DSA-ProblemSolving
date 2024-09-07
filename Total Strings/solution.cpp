@@ -23,3 +23,19 @@ long long int countStr(long long int n){
     return (1+n+n+(n*(n-1))/2+(n*(n-1))+((n-2)*(n-1)*n)/2);
 
 }
+
+// DP Solution T.C.=O(6N) S.C.=O(6N)
+int f(int ind, int n, int b, int c, vector<vector<vector<int>>> &dp) {
+    if(ind==n) return 1;
+    if(dp[ind][b][c] != -1) return dp[ind][b][c];
+    int ans=0;
+    if(ind < n) ans+=f(ind+1, n, b, c, dp);
+    if(b>0 && ind<n) ans+=f(ind+1, n, b-1, c, dp);
+    if(c>0 && ind<n) ans+=f(ind+1, n, b, c-1, dp);
+    return dp[ind][b][c] = ans;
+}
+int countStrings(int n) {
+    int b=1, c=2;
+    vector<vector<vector<int>>> dp(n+1, vector<vector<int>> (2, vector<int> (3, -1)));
+    return f(0, n, b, c, dp);
+}
