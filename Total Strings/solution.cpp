@@ -1,5 +1,5 @@
 // T.C.=O(N) where n is the length of the input for the combination function S.C.=O(1)
-// we take combinations ki b can be 0 to kya possibilities hain plus b=1 ke liye kya. 
+// We take combinations ki b can be 0 to kya possibilities hain plus b=1 ke liye kya. 
 long long comb(int n, int r){
     if(r==n) return 1;
     long long ans=1;
