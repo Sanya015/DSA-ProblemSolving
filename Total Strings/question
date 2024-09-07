@@ -1,0 +1,31 @@
+Problem statement
+You are given a positive integer 'N'. Your task is to find the number of strings of length ‘N’ that can be formed using only the characters ‘a’, ‘b’ and ‘c’. The strings formed should be such that the number of ‘b’ and ‘c’ in the string is at most 1 and 2, respectively.
+
+Example:
+Let’s say N = 2. The strings of length 2, which satisfy the given constraints are: “aa”, “ab”, “ac”, “ba”, “bc”, “ca”, “cb”, “cc”. Hence, the output is 8.
+Detailed explanation ( Input/output format, Notes, Images )
+Constraints:
+1 <= T <= 100 
+1 <= N <= 3000
+
+Where 'T' denotes the number of test cases, 'N' denotes the length of strings. 
+
+Time Limit: 1 sec
+Sample Input 1:
+2
+2
+3
+Sample Output 1:
+8
+19
+Explanation 1:
+For the first test case, refer to the example explained before.
+
+For the second test case, N = 3. The strings of length 3, which satisfy the given constraints are: “aaa”, “aab”, “aac”, “aba”, “abc”, “aca”, “acb”, “acc”, and so on. There are a total of 19 possible strings. 
+Sample Input 2:
+2
+4
+1
+Sample Output 2:
+39
+3
